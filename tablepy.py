@@ -328,3 +328,100 @@ class makingTable:
         else:
             ## if condition is not satisfied
             print('Cannot Display Table')
+
+    def deleteColumn(self, choice_col):
+        ## this function will delete the columns as chosen by the user
+        if(reuseIsList1d(choice_col) == True):
+            ## for function to run choice_col should be in 1d
+            correct = 1
+            ## correct is a variable set to 1
+            ## if the further code changes it's value to 0 that means either column name is not correct or index passed is not valid
+            for i in choice_col:
+                if((type(i) is int) and (0<=i<len(self.main_col))):
+                        pass
+                        continue
+                for j in self.main_col:
+                    if(((type(i) is str) or (type(i) is int) or (type(i) is float)) and i == j):
+                        choice_col[choice_col.index(i)] = self.main_col.index(j)
+                        break
+                else:
+                    correct = 0
+            ## above code will change column name to it's respective index
+            ## and either column name or the index is not correctly passed the correct value changes to 0
+            ## and if the value changes to 0 then deletion will not happen
+            if(correct == 1):
+                ## if correct value do not changes
+                ## then deletion will happen
+                for index in sorted(choice_col, reverse=True):
+                    del self.main_col[index]
+
+                for i in range(0,len(self.main_row)):
+                    for index in sorted(choice_col, reverse=True):
+                        del self.main_row[i][index]
+            ## the code written inside if block will delete the chosen columns from main_col and their required information form main_row
+            else:
+                ## if correct value changes value to 0
+                ## then deletion won't happen
+                print('Either index or column name is not correct')
+
+        else:
+            ## if the choice_col list is not in 1d
+            print('Passed parameter is not in 1d')
+
+    def deleteRow(self, choice, choice_row):
+        ## this function will delete row/s chosen by the user
+        ## choice variable has three choices available -
+        ## 's' for single row, 'c' for multiple consequent rows and 'r' for multiple random rows
+        ## choice_row will either be an integer or a list depending on the choice variable
+
+        correct = 1
+        ## to check index exist or not in case of 'c' and 'r'
+
+        if(choice == 's' and (type(choice_row) == int)):
+            ## if user want to delete single row
+            ## choice will be 's' and data-type of choice_row will be an integer
+            if(0<=choice_row<len(self.main_row)):
+                del self.main_row[choice_row]
+            else:
+                print('Index not valid')
+        ## will delete single row from the table
+
+        elif(choice == 'c' and (reuseIsList1d(choice_row) == True)):
+            ## if user want to delete multiple consequent rows
+            ## choice will be 'c' and data-type of choice_row will be 1d list
+            ## choice_row = [a,b] , a is start and b is end
+            for i in choice_row:
+                if(0<=i<len(self.main_row)):
+                    pass
+                else:
+                    correct = 0
+            ## for loop code to see whether index exist or not
+            if(correct == 1):
+                choice_row.sort()
+                ## if not passed in a sorted order
+                for index in range(choice_row[1], choice_row[0]-1, -1):
+                    del self.main_row[index]
+            else:
+                print('Index not valid')
+        ## will delete multiple consequent rows from the table
+
+        elif(choice == 'r' and (reuseIsList1d(choice_row) == True)):
+            ## if user want to delete multiple random rows
+            ## choice will be 'r' and data-type of choice_row will be 1d list
+            ## choice_row = [a,b,c,..] , a,b,c... are the index number
+            for i in choice_row:
+                if(0<=i<len(self.main_row)):
+                    pass
+                else:
+                    correct = 0
+            ## for loop code to see whether index exist or not
+            if(correct == 1):
+                for index in sorted(choice_row, reverse=True):
+                    del self.main_row[index]
+            else:
+                print('Index not Valid')
+
+        else:
+            ## when the choices entered are not correct
+            print('One of the parameter is not valid')
+
