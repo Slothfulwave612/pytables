@@ -44,3 +44,18 @@ e.g. Taking the example of the table we formed in first function, let's say we w
                                   displayColumnChoice(choice_col)      (will display all rows and only name and roll number as columns)
                                   displayColumnChoice(choice_col,2)    (will display only 2 rows and name and roll number as columns)
                                                                     
+9. deleteColumn(choice_col) :- This function will delete the columns(as per the user) present in the table. choice_col is a 1d list which either contains column names or their indices.
+e.g. Let's say we want to delete Roll Number and Age from the table so to do so we have to pass the argument like this :-
+                                             choice_col = ['Roll Number', 'Age']     (using column names)
+                                                            or
+                                             choice_col = [1,2]                      (using indices)
+                                             deleteColumn(choice_col)                (will delete the required columns)
+
+10. deleteRow(choice, choice_row) :-This function will delete the rows(as per the user) present in the table. choice is a string(rather character) the choice variable takes three character :- 's', 'c', 'r' and choice_row will either be an integer or a list depending on the choice variable. Let's walkthrough all the choices :-
+               i) 's' :- for deleting single row, choice_row(for this choice) will be an integer, and the value of choice_row will be                            the index of the row that is to be deleted.
+               ii) 'c' :- for deleting multiple and consequent row(i.e. if you want to delete rows from 3 to 7), choice_row(for this                               choice) will be a 1d list, and the list will contain starting and ending rows, i.e. if you want to delete rows 
+                          from 3 to 7 choice_row will be equal to : choice_row = [2,6] (2 and 6 are the indices)
+               iii) 'r' :- for deleting multiple and random rows(i.e. if you want to delete rows 3,6,7,9), choice_row(for this choice) 
+                           will be a 1d list, and the list will contain all the indices of rows that are to be deleted. To delete the                              rows specified above we will pass : choice_row = [2,5,6,8] (indices are passed).
+                           
+To-do :- functions for searching and displaying rows as per user choice.
