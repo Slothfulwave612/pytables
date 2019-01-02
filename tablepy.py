@@ -57,10 +57,6 @@ class makingTable:
         self.main_col = main_col
         self.main_row = main_row
 
-    def displayTest(self):
-        print(self.main_col)
-        print(self.main_row)
-
     def makeTable(self,col_info, row_info):
         ## makeTable function will add specified row and columns into the table.
         if(reuseIsList1d(col_info) == True and reuseIsList2d(row_info) == True):
