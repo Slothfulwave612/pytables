@@ -8,7 +8,7 @@ main_row :- is a 2d list
 
 1. makeTable(col_info, row_info) :- This function is used for making the initial table. col_info is a 1d list where the user can pass column names and row_info is a 2d list where the user can pass row information for every columns.
 
-e.g. If one want to make a table having names, roll numbers and age of the student then the user have to create the two lists as :-
+     e.g. If one want to make a table having names, roll numbers and age of the student then the user have to create the two lists as :-
 
      col_info = ['Name', 'Roll Number', 'Age'] and
      
