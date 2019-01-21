@@ -7,10 +7,15 @@ main_col :- is a 1d list and contains the column names.
 main_row :- is a 2d list 
 
 1. makeTable(col_info, row_info) :- This function is used for making the initial table. col_info is a 1d list where the user can pass column names and row_info is a 2d list where the user can pass row information for every columns.
+
 e.g. If one want to make a table having names, roll numbers and age of the student then the user have to create the two lists as :-
+
      col_info = ['Name', 'Roll Number', 'Age'] and
+     
      row_info = [['A', 1001, 18], ['B', 1002, 18], ['C', 1003, 19]]
+     
      and so to create the initial table user has to pass both the list into the function : makeTable(col_info, row_info)
+     
    
 2. displayTable(col_info=None, row_info=None) :- This function is used for displaying the table on to the screen. col_info and row_info parameters are used for another function to display table as user says(i.e. either all columns or few or all rows or few of them).
 
