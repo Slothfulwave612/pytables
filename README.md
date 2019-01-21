@@ -10,7 +10,7 @@ main_row :- is a 2d list
 
      e.g. If one want to make a table having names, roll numbers and age of the student then the user have to create the two lists as :-
 
-     col_info = ['Name', 'Roll Number', 'Age'] and
+     col_info = ['Name', 'Roll Number', 'Age']   and
      
      row_info = [['A', 1001, 18], ['B', 1002, 18], ['C', 1003, 19]]
      
@@ -25,10 +25,15 @@ main_row :- is a 2d list
 
 5. updateColumnName(col_info) :- This function is used for updating the column names in the table. col_info(here) is a dict which will take the new names of columns as per this format :- col_info = {<index_of_column_name / column_name> : <new_name>}
 e.g. Taking the example of table we formed in first function, let's say we want to update Name to Student Name and Roll Number to Student Id so to make it happen we have to pass col_info to the required function as :-
+
                                col_info = {0 : 'Student Name', 1 : 'Student Id'}    (using indices)
+                               
                                                      or 
+                                                     
                                col_info = {'Name' : 'Student Name', 'Roll Number' : 'Student Id'}    (using column names)
-                               updateColumnName(col_info)                               
+                               
+                               updateColumnName(col_info)       
+                               
 
 6. updateRowInfo(row_info) :- This function is used for updating the row information. row_info(here) is a dict which will take the old and new information of a particular row as per this format :- 
 row_info = {<index_of_row> : {<index/name_of_row[0]> : <new_info>, <index/name_of_row[1]> : <new_info>, ....}}
