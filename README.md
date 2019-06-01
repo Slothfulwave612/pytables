@@ -91,6 +91,4 @@ main_row :- is a 2d list
                                        
      iii) 'r' :- for deleting multiple and random rows(i.e. if you want to delete rows 3,6,7,9), choice_row(for this choice) 
                  will be a 1d list, and the list will contain all the indices of rows that are to be deleted. To delete the                              rows specified above we will pass : choice_row = [2,5,6,8] (indices are passed).
-                           
-                           
-To-do :- functions for searching and displaying rows as per user choice.
+                          
