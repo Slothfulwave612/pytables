@@ -1,4 +1,4 @@
-# Making-Table-v2
+# pytables
 comes equipped with more functionalities, like adding rows and columns updating them, displaying columns and rows of user choice
 
 The program comes equipped with various functions that can be used for making tables.
